@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     private bool inAir;
 
     public float speed = 0.0f;
-    public float jumpPower = 0.0f;
+    public float jumpPower = 1.0f;
 
     // Start is called before the first frame update
     void Start()
