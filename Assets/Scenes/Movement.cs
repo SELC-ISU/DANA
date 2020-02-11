@@ -48,5 +48,10 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col) {
         inAir = false;
+		
+		//Reloads level if it touches a RedBox
+		if(col.gameObject.tag == "RedBox"){
+			Application.LoadLevel(Application.loadedLevel);
+		}
     }
 }
