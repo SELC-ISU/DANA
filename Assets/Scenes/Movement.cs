@@ -7,9 +7,11 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D bc;
 
+    private Vector3 goalOrientation = new Vector3(0, 0, 0);
+
     private float horizontal;
     private bool jumpPressed;
-    private bool inAir;
+    private bool inAir = false;
 
     public float speed = 0.0f;
     public float jumpPower = 0.0f;
@@ -32,18 +34,35 @@ public class Movement : MonoBehaviour
         if (inAir) {
             jumpPressed = false;
         }
+        goalOrientation = new Vector3(0, 0, Gravity_Shift.getGravityAngle());
     }
 
     void FixedUpdate() {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        Quaternion goalR = Quaternion.Euler(goalOrientation);
+        Quaternion deltaRPos = Quaternion.Euler(goalOrientation * 2 * Time.deltaTime);
+        Quaternion deltaRNeg = Quaternion.Euler(-goalOrientation * 2 * Time.deltaTime);
+        if (transform.rotation.z + deltaRPos.z < goalR.z) {
+            rb.MoveRotation(transform.rotation * deltaRPos);
+        } else if(transform.rotation.z + deltaRNeg.z > goalR.z) {
+            rb.MoveRotation(transform.rotation * deltaRNeg);
+        } else {
+            transform.eulerAngles = goalOrientation;
+        }
+
         if (jumpPressed && !inAir) {
             Jump();
             inAir = true;
+        } else if (!inAir) {
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
     }
 
     private void Jump() {
-        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        Vector2 grav = Physics2D.gravity;
+        grav.Normalize();
+        rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower,
+                                rb.velocity.y + rb.mass * -grav.y * jumpPower),
+                                ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
