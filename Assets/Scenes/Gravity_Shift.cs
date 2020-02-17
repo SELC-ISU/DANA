@@ -12,7 +12,7 @@ public class Gravity_Shift : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Physics.gravity = new Vector3(0.0f, 0.0f, 0.0f);
+
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class Gravity_Shift : MonoBehaviour
         float rotX = (float) Mathf.Sin(rot);
         float rotY = (float) Mathf.Cos(rot);
         // Debug.Log(rot + "=" + rotX + "," + rotY);
-        Physics2D.gravity = new Vector2(rotX * -9.81f, rotY * 9.81f);
+        Physics2D.gravity = new Vector2(rotX * 9.81f, rotY * 9.81f);
     }
 
     public static int getGravityAngle() {

@@ -38,6 +38,10 @@ public class Movement : MonoBehaviour
     }
 
     void FixedUpdate() {
+      float rot = (float) (Gravity_Shift.getGravityAngle() * Mathf.PI / 180f);
+      float rotX = (float) Mathf.Cos(rot);
+      float rotY = (float) Mathf.Sin(rot);
+
         Quaternion goalR = Quaternion.Euler(goalOrientation);
         Quaternion deltaRPos = Quaternion.Euler(goalOrientation * 2 * Time.deltaTime);
         Quaternion deltaRNeg = Quaternion.Euler(-goalOrientation * 2 * Time.deltaTime);
@@ -53,7 +57,7 @@ public class Movement : MonoBehaviour
             Jump();
             inAir = true;
         } else if (!inAir) {
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            rb.velocity = new Vector2(rotX * horizontal * speed, rotY * horizontal * speed);
         }
     }
 
@@ -67,10 +71,14 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col) {
         inAir = false;
-		
+
 		//Reloads level if it touches a RedBox
 		if(col.gameObject.tag == "RedBox"){
 			Application.LoadLevel(Application.loadedLevel);
 		}
+    }
+
+    private void OnCollisionExit2D(Collision2D col) {
+        inAir = true;
     }
 }
