@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GreenBox_Test.unity
+    guid: b66e3d47055cecc4a8cec185faf69ee5
+  - enabled: 1
+    path: Assets/Scenes/GreenBox_Test2.unity
+    guid: 8518ec9428ab6254fbacfb28917fc548
   m_configObjects: {}

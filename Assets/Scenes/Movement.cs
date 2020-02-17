@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private bool jumpPressed;
     private bool inAir = false;
+	private bool yellowBox = false;
+	private static float JUMP_BOOST = 2.0f;
 
     public float speed = 0.0f;
     public float jumpPower = 0.0f;
@@ -54,24 +56,34 @@ public class Movement : MonoBehaviour
         }
 
         if (jumpPressed && !inAir) {
-            Jump();
+			if(yellowBox){
+				Jump(JUMP_BOOST);
+				yellowBox = false;
+			}else{
+				Jump(1.0f);
+			}
             inAir = true;
         } else if (!inAir) {
             rb.velocity = new Vector2(rotX * horizontal * speed, rotY * horizontal * speed);
         }
     }
 
-    private void Jump() {
+	private void Jump(float modifier) {
         Vector2 grav = Physics2D.gravity;
         grav.Normalize();
-        rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower,
-                                rb.velocity.y + rb.mass * -grav.y * jumpPower),
+        rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower * modifier,
+                                rb.velocity.y + rb.mass * -grav.y * jumpPower * modifier),
                                 ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
         inAir = false;
-
+		//Notes if touching yellowBox
+		if(col.gameObject.tag == "YellowBox"){
+			yellowBox = true;
+		}else{
+			yellowBox = false;
+		}
 		//Reloads level if it touches a RedBox
 		if(col.gameObject.tag == "RedBox"){
 			Application.LoadLevel(Application.loadedLevel);
