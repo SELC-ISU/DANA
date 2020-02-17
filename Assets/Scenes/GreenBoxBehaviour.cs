@@ -8,21 +8,20 @@ public class GreenBoxBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void OnTriggerEnter2D(Collider2D entity)
     {
-        Debug.Log("touching player");
         //changes level if it player touches it
         if (entity.gameObject.tag == "Player")
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("GreenBox_Test2");
         }
-    } 
+    }
 }
