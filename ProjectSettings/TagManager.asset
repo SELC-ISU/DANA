@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RedBox
   - GreenBox
+  - YellowBox
   layers:
   - Default
   - TransparentFX
