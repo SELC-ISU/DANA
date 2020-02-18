@@ -103,9 +103,11 @@ public class Movement : MonoBehaviour
 	private void Jump(float modifier) {
         Vector2 grav = Physics2D.gravity;
         grav.Normalize();
-        rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower * modifier,
+        if(Math.Abs(rb.velocity.x * -grav.x) < 11 && Math.Abs(rb.velocity.y * -grav.y) < 11){
+			rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower * modifier,
                                 rb.velocity.y + rb.mass * -grav.y * jumpPower * modifier),
                                 ForceMode2D.Impulse);
+		}
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
