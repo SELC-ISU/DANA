@@ -188,11 +188,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: button
       objectReference: {fileID: 0}
-    - target: {fileID: 1626172457548113790, guid: fedfbd0733b697a458febe93edf97d43,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedfbd0733b697a458febe93edf97d43, type: 3}
 --- !u!1001 &1645670364
