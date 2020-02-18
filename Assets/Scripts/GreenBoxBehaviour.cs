@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GreenBoxBehaviour : MonoBehaviour
 {
+	string[] levelNames = {"KenyonTestLevel1", "KenyonTestLevel2", "KenyonTestLevel3"};
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,12 @@ public class GreenBoxBehaviour : MonoBehaviour
         //changes level if it player touches it
         if (entity.gameObject.tag == "Player")
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GreenBox_Test2");
+			int index = Array.IndexOf(levelNames, SceneManager.GetActiveScene().name);
+			if(index > -1 && index != levelNames.Length - 1){
+				UnityEngine.SceneManagement.SceneManager.LoadScene(levelNames[++index]);
+			}else{
+				UnityEngine.SceneManagement.SceneManager.LoadScene("GreenBox_Test2");
+			}
         }
     }
 }
