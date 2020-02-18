@@ -7,6 +7,7 @@ TagManager:
   - RedBox
   - GreenBox
   - YellowBox
+  - BlackBox
   layers:
   - Default
   - TransparentFX
