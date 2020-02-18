@@ -8,6 +8,7 @@ TagManager:
   - GreenBox
   - YellowBox
   - BlackBox
+  - Projectile
   layers:
   - Default
   - TransparentFX
