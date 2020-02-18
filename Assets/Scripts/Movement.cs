@@ -23,7 +23,9 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        Physics2D.gravity = new Vector2(0.0f, -9.81f);
+		Gravity_Shift.angle = 0.0f;
+		rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
 
         // Initializes the current orientation and goalOrientation
