@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Daniel_Powerup1 : MonoBehaviour
 {
-    GameObject Circle, Box;
+    GameObject Circle, Box, Powerup;
 
     // Start is called before the first frame update
     void Start()
     {
         Circle = GameObject.Find("Player_Circle");
         Box = GameObject.Find("Player");
+        Powerup = GameObject.Find("Powerup1");
 
         //start as Box
         Box.SetActive(true);
+        Circle.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,12 +32,14 @@ public class Daniel_Powerup1 : MonoBehaviour
                     Box.transform.position = Circle.transform.position;
                     Circle.SetActive(false);
                     Box.SetActive(true);
+                    Powerup.SetActive(false);
                 }
                 else if (Box.active == true)
                 {
                     Circle.transform.position = Box.transform.position;
                     Box.SetActive(false);
                     Circle.SetActive(true);
-                }   
+                    Powerup.SetActive(false);
+            }   
     }
 }
