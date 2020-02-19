@@ -15,12 +15,16 @@ public class FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set player to an object with player tag
+        player = GameObject.FindWithTag("Player"); 
         relativePosition = new Vector3(offset.x, offset.y, -10);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //sets the player to current object with player tag
+        player = GameObject.FindWithTag("Player");
         // Updates the position to equal the player's position plus an offset
         transform.position = player.transform.position + relativePosition;
         // Updates the current goal orientation based on the gravity direction
