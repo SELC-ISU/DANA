@@ -461,10 +461,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Powerup1
       objectReference: {fileID: 0}
+    - target: {fileID: 461694327390018194, guid: 224ad261e74bdc743bed57715328ea8b,
+        type: 3}
+      propertyPath: m_TagString
+      value: PowerUp1
+      objectReference: {fileID: 0}
     - target: {fileID: 5083364067644078695, guid: 224ad261e74bdc743bed57715328ea8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5083364067644078695, guid: 224ad261e74bdc743bed57715328ea8b,
         type: 3}

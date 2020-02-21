@@ -11,7 +11,7 @@ public class Daniel_Powerup1 : MonoBehaviour
     {
         Circle = GameObject.Find("Player_Circle");
         Box = GameObject.Find("Player");
-        Powerup = GameObject.Find("Powerup1");
+        Powerup = GameObject.FindWithTag("PowerUp1");
 
         //start as Box
         Box.SetActive(true);
@@ -21,7 +21,6 @@ public class Daniel_Powerup1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     void OnTriggerEnter2D(Collider2D entity)
     {
