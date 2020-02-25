@@ -5,10 +5,11 @@ using UnityEngine;
 public class Teleporter_2 : MonoBehaviour
 {
     GameObject tp1, tp2, player;
-    Vector3 p1, p2;
+    Vector3 p1, p2, offset;
     // Start is called before the first frame update
     void Start()
     {
+        offset = new Vector3(-0.5f, 0.1f, 0.0f);
         tp1 = GameObject.Find("Teleporter");
         tp2 = GameObject.Find("TP2");
         player = GameObject.FindWithTag("Player");
@@ -26,7 +27,7 @@ public class Teleporter_2 : MonoBehaviour
     {
         if (entity.gameObject == player)
         {
-            player.transform.position = p1;
+            player.transform.position = p1 + offset;
         }
     }
 }
