@@ -9,6 +9,8 @@ TagManager:
   - YellowBox
   - BlackBox
   - Projectile
+  - PowerUp1
+  - Teleporter
   layers:
   - Default
   - TransparentFX
