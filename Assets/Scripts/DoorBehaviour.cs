@@ -22,7 +22,7 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (entity.gameObject.tag == "Player")
         {
-
+            
         }
 
     }

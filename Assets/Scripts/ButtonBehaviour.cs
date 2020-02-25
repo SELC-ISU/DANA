@@ -25,12 +25,13 @@ public class ButtonBehaviour : MonoBehaviour
         {
             Physics2D.IgnoreCollision(door, Player);
         }
-        void OnTriggerExit2D(Collider2D other)
+        
+    }
+    void OnTriggerExit2D(Collider2D entity)
+    {
+        if (entity.gameObject.tag == "Player")
         {
-            if (entity.gameObject.tag == "Player")
-            {
-                Physics2D.IgnoreCollision(door, Player);
-            }
+            Physics2D.IgnoreCollision(door, Player);
         }
     }
 }
