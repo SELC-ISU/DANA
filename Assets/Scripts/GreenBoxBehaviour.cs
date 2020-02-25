@@ -6,7 +6,7 @@ using System;
 
 public class GreenBoxBehaviour : MonoBehaviour
 {
-	string[] levelNames = {"KenyonTestLevel1", "Daniel_PowerupLevel", "Yellow_Block_Level", "KenyonTestLevel3"};
+	public string[] levelNames = {"KenyonTestLevel1", "Daniel_PowerupLevel", "Yellow_Block_Level", "KenyonTestLevel3"};
 	
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,9 @@ public class GreenBoxBehaviour : MonoBehaviour
         {
 			int index = Array.IndexOf(levelNames, SceneManager.GetActiveScene().name);
 			if(index > -1 && index != levelNames.Length - 1){
-				UnityEngine.SceneManagement.SceneManager.LoadScene(levelNames[++index]);
+				SaveManager.currentSave.currentLevel = levelNames[++index];
+				SaveManager.WriteSave(SaveManager.saveNum, SaveManager.currentSave);
+				UnityEngine.SceneManagement.SceneManager.LoadScene(levelNames[index]);
 			}else{
 				UnityEngine.SceneManagement.SceneManager.LoadScene("GreenBox_Test2");
 			}
