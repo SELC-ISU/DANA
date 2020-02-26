@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1574691298579706436}
   - component: {fileID: 2475377315226142808}
   - component: {fileID: 1946533113258154928}
+  - component: {fileID: -7113724937919498042}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229ef8541a04ebb4a97bb2ce37a5fe43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeSpan: 10
 --- !u!50 &1946533113258154928
 Rigidbody2D:
   serializedVersion: 4
@@ -116,3 +118,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!61 &-7113724937919498042
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946533113258154929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

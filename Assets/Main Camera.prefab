@@ -98,4 +98,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 9113506596928607214, guid: 83965d896cec72d44b26bff2e13b7f06, type: 3}
   offset: {x: 0, y: 0}
-  rotationSpeed: 1
+  rotationSpeed: 7

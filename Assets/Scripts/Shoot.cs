@@ -5,9 +5,10 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
 
+    public float projectileSpeedMultiplier = 10.0f;
+
     public GameObject projectilePrefab;
     private GameObject projectile;
-    // private Projectile script;
 
     private Vector2 target;
     private Vector2 pos;
@@ -17,24 +18,32 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = new Vector2(0.0f, 0.0f);
     }
 
     // Update is called once per frame
     void Update() {
+
+        // Detect mouse input
         if (Input.GetMouseButtonDown(0)) {
+            // Update pos to equal current position
+            // Update target to equal mouse position
             pos = rb.position;
             target = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
-            float velX = target.x - pos.x;
-            float velY = target.y - pos.y;
-            Vector2 vel = new Vector2(velX, velY);
 
-            Debug.Log("Target: " + target);
+            // Calculate the distances
+            float distX = target.x - pos.x;
+            float distY = target.y - pos.y;
+            float dist = Mathf.Sqrt(Mathf.Pow(distX, 2) + Mathf.Pow(distY, 2));
 
+            // Calculate the velocities
+            float velX = distX / dist * projectileSpeedMultiplier;
+            float velY = distY / dist * projectileSpeedMultiplier;
+
+            // Instantiate a new projectile at current position
             projectile = (GameObject) Instantiate(projectilePrefab, pos, Quaternion.identity);
 
+            // Access the script of the new projectile and set its velocity
             ScriptProjectile script = (ScriptProjectile) projectile.GetComponent<ScriptProjectile>();
-            // Debug.Log(script);
             script.setVel(velX, velY);
         }
     }

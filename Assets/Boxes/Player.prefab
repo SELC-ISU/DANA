@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9113506596928607216}
   - component: {fileID: 9113506596928607217}
   - component: {fileID: 1562471938868771402}
-  - component: {fileID: -5334057481560991925}
+  - component: {fileID: 7334000770164685700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -159,7 +159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a8a884e6118f941aea6edbe1975b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5334057481560991925
+  levelNames:
+  - KenyonTestLevel1
+  - Daniel_PowerupLevel
+  - Yellow_Block_Level
+  - KenyonTestLevel3
+--- !u!114 &7334000770164685700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +173,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9113506596928607214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7836adfc698aed489d23144108f000f, type: 3}
+  m_Script: {fileID: 11500000, guid: db02eec1b98fbac45a8f6dfd0d43b403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileSpeedMultiplier: 100
+  projectilePrefab: {fileID: 1946533113258154929, guid: ac5eedea4e4080b47b0063698934db9e,
+    type: 3}

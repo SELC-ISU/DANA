@@ -28,10 +28,11 @@ public class BlackBox : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D entity) {
-        // Debug.Log(rot + "=" + rotX + "," + rotY);
-        // Updates the current world gravity angle to this gravity shifter
-        Gravity_Shift.angle = 180 - rotation.z;
-        // Updates the gravity to this gravity shifter
-        Physics2D.gravity = new Vector2(rotX * 9.81f, rotY * 9.81f);
+        if (entity.transform.gameObject.tag == "Projectile") {
+            // Updates the current world gravity angle to this gravity shifter
+            Gravity_Shift.angle = 180 - rotation.z;
+            // Updates the gravity to this gravity shifter
+            Physics2D.gravity = new Vector2(rotX * 9.81f, rotY * 9.81f);
+        }
     }
 }
