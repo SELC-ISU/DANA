@@ -9,7 +9,7 @@ public class Teleporter_2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(-0.5f, 0.1f, 0.0f);
+        offset = new Vector3(-1f, 0.1f, 0.0f);
         tp1 = GameObject.Find("Teleporter");
         tp2 = GameObject.Find("TP2");
         player = GameObject.FindWithTag("Player");
@@ -20,6 +20,8 @@ public class Teleporter_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindWithTag("Player");
+
     }
 
     //if player touches it
