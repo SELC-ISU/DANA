@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: e5d78e1dd5a9be340abecde156232389
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KenyonTestLevel1.unity
     guid: 88fff9c5b8ec0a04ba87f664311ab9ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KenyonTestLevel3.unity
     guid: 7cca9616407b27e48a2779af99fd8e0a
   - enabled: 0
@@ -29,10 +29,25 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Daniel_Powerup_test.unity
     guid: 9d5ddc0be4ed00742a9a1a8cda71f475
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Yellow_Block_Level.unity
     guid: 29acf0bbaa4258b4cbe73b5542f4be2d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Daniel_PowerupLevel.unity
     guid: ecbef2096464e214f8993f536dab6529
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: ae20857a61cf1a8448206cc89f39d970
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: dd3f803e565c1234881944ef75f71054
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 7bf459dae41d53a4d9cc64232083378e
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: a735cf1d906bcf3488574bdd0f0ca79d
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 8f1379894748272429b7f345d1c2d1d1
   m_configObjects: {}
