@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private bool jumpPressed;
     private bool inAir = false;
+    private float groundDist;
 
     public float speed = 0.0f;
     public float jumpPower = 0.0f;
@@ -23,9 +24,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics2D.gravity = new Vector2(0.0f, -9.81f);
-		Gravity_Shift.angle = 0.0f;
-		rb = GetComponent<Rigidbody2D>();
+		    rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
 
         // Initializes the current orientation and goalOrientation
@@ -38,6 +37,9 @@ public class Movement : MonoBehaviour
     {
         // Checks to see if the player is trying to move
         horizontal = Input.GetAxis("Horizontal");
+
+        // These lines of code was gotten from help forum https://answers.unity.com/questions/196381/how-do-i-check-if-my-rigidbody-player-is-grounded.html
+        groundDist = GetComponent<BoxCollider2D>().bounds.extents.y;
 
         // Checks to see if the player is trying to jump
         if (Input.GetButton("Jump")) {
@@ -78,6 +80,11 @@ public class Movement : MonoBehaviour
       			}
             inAir = true;
         }
+        if (IsGrounded()) {
+            inAir = false;
+        } else {
+            inAir = true;
+        }
 
         // Movement logic
         float xMovement = rotX * horizontal * speed;
@@ -102,18 +109,24 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector2(xSpeed, ySpeed);
     }
 
-	private void Jump(float modifier) {
+	   private void Jump(float modifier) {
         Vector2 grav = Physics2D.gravity;
         grav.Normalize();
         if(Math.Abs(rb.velocity.x * -grav.x) < 11 && Math.Abs(rb.velocity.y * -grav.y) < 11){
-			rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower * modifier,
-                                rb.velocity.y + rb.mass * -grav.y * jumpPower * modifier),
-                                ForceMode2D.Impulse);
-		}
+			           rb.AddForce(new Vector2(rb.velocity.x + rb.mass * -grav.x * jumpPower * modifier,
+                 rb.velocity.y + rb.mass * -grav.y * jumpPower * modifier),
+                 ForceMode2D.Impulse);
+		    }
+    }
+
+    // This method was gotten from help forum https://answers.unity.com/questions/196381/how-do-i-check-if-my-rigidbody-player-is-grounded.html
+    private bool IsGrounded() {
+        Vector2 raycastOrigin = new Vector2(transform.position.x, transform.position.y) + new Vector2(Physics2D.gravity.x, Physics2D.gravity.y).normalized;
+        return Physics2D.Raycast(raycastOrigin, -Vector3.up, 0.0001f);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        inAir = false;
+        // inAir = false;
 
         //Notes if touching yellowBox
     		if(col.gameObject.tag == "YellowBox"){
@@ -129,6 +142,6 @@ public class Movement : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D col) {
-        inAir = true;
+        // inAir = true;
     }
 }
