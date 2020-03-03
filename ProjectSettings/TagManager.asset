@@ -11,6 +11,7 @@ TagManager:
   - Projectile
   - PowerUp1
   - Teleporter
+  - ActivatorBox
   layers:
   - Default
   - TransparentFX

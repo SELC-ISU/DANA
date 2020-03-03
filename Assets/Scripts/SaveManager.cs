@@ -20,7 +20,7 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
 		saveNum = 1; //Sets default save folder
-		JsonUtility.FromJsonOverwrite("{\"currentLevel\":\"KenyonTestLevel1\"}", template); //Blank/Template Save Information
+		JsonUtility.FromJsonOverwrite("{\"currentLevel\":\"Level 1\"}", template); //Blank/Template Save Information
 
 		//Creates save folder in Application.persistentDataPath if it doesn't exist
 		saveFolder = Application.persistentDataPath + "/Saves/";
