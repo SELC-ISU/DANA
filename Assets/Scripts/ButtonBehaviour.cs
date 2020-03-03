@@ -8,6 +8,8 @@ public class ButtonBehaviour : MonoBehaviour
 
     public Collider2D door;
     public Collider2D Player;
+    public float width;
+    public float height;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,9 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if (entity.gameObject.tag == "Player")
         {
-            Physics2D.IgnoreCollision(door, Player);
+            width = 1;
+            height = 1;
+            //door.gameObject.transform.localScale = new Vector2(1, 1);
         }
         
     }
