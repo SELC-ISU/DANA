@@ -500,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   offset: {x: 0, y: 0}
-  rotationSpeed: 1
+  rotationSpeed: 10
 --- !u!1001 &366379416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2060,7 +2060,7 @@ PrefabInstance:
     - target: {fileID: 9113506596928607217, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
       propertyPath: jumpPower
-      value: 10
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 9113506596928607221, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
