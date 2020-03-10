@@ -15,8 +15,12 @@ public class FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Reset the gravity at beginning of each level.
+        Physics2D.gravity = new Vector2(0.0f, -9.81f);
+		    Gravity_Shift.angle = 0.0f;
+
         //set player to an object with player tag
-        player = GameObject.FindWithTag("Player"); 
+        player = GameObject.FindWithTag("Player");
         relativePosition = new Vector3(offset.x, offset.y, -10);
     }
 
