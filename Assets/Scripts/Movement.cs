@@ -70,6 +70,12 @@ public class Movement : MonoBehaviour
             transform.eulerAngles = goalOrientation;
         }
 
+        if (IsGrounded()) {
+            inAir = false;
+        } else {
+            inAir = true;
+        }
+
         // Jump logic
         if (jumpPressed && !inAir) {
       			if(yellowBox){
@@ -78,11 +84,6 @@ public class Movement : MonoBehaviour
       			}else{
       				Jump(1.0f);
       			}
-            inAir = true;
-        }
-        if (IsGrounded()) {
-            inAir = false;
-        } else {
             inAir = true;
         }
 
