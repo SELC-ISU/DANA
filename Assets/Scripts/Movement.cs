@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
 
     public float speed = 0.0f;
     public float jumpPower = 0.0f;
+    private long jumpStartTime;
 
     private bool yellowBox = false;
     private static float JUMP_BOOST = 2.0f;
@@ -31,6 +32,7 @@ public class Movement : MonoBehaviour
         // Initializes the current orientation and goalOrientation
         goalOrientation = new Vector3(0, 0, 180 - Gravity_Shift.angle);
         transform.eulerAngles = goalOrientation;
+        jumpStartTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
     }
 
     // Update is called once per frame
@@ -71,10 +73,14 @@ public class Movement : MonoBehaviour
             transform.eulerAngles = goalOrientation;
         }
 
-        if (IsGrounded()) {
-            inAir = false;
-        } else {
-            inAir = true;
+        long currentJumpTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        if (currentJumpTime - jumpStartTime >= 100) {
+            if (IsGrounded()) {
+                inAir = false;
+            } else {
+                inAir = true;
+            }
+            jumpStartTime = currentJumpTime;
         }
 
         // Jump logic
