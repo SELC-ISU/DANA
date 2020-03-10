@@ -2,6 +2,7 @@ using System;
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -138,7 +139,7 @@ public class Movement : MonoBehaviour
 
         //Reloads level if it touches a RedBox
     		if(col.gameObject.tag == "RedBox"){
-    		    Application.LoadLevel(Application.loadedLevel);
+    		    UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     		}
     }
 
