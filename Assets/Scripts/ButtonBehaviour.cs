@@ -6,8 +6,9 @@ public class ButtonBehaviour : MonoBehaviour
 {
 
 
-    public Collider2D door;
+    
     public Collider2D Player;
+    public Collider2D door;
     public float width;
     public float height;
     public float posx;
