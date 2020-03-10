@@ -6,7 +6,7 @@ using System;
 
 public class GreenBoxBehaviour : MonoBehaviour
 {
-	public string[] levelNames = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5"};
+	public string[] levelNames = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7", "Level 8"};
 	
     // Start is called before the first frame update
     void Start()
