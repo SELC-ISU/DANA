@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1626172457548113784}
   - component: {fileID: 1626172457548113790}
   - component: {fileID: 1626172457548113791}
-  - component: {fileID: 4223043415572588300}
   m_Layer: 0
   m_Name: button
   m_TagString: Untagged
@@ -131,21 +130,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &4223043415572588300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626172457548113787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899b16901c72a7e4d99f7ce3f1c9b33b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 0}
-  Player: {fileID: 0}
-  width: 0
-  height: 0
-  posx: 0
-  posy: 0
