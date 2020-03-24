@@ -987,11 +987,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1672708078191877856, guid: e1aa45e59ddca5849bcb8a6d5d593f65,
-        type: 3}
-      propertyPath: orthographic size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1672708078191877857, guid: e1aa45e59ddca5849bcb8a6d5d593f65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1069,11 +1064,7 @@ PrefabInstance:
     - target: {fileID: 9113506596928607217, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
       propertyPath: jumpPower
-<<<<<<< HEAD
-      value: 3
-=======
       value: 5
->>>>>>> d8f5a47530b12e7b91e3551dd881e62f42e067dc
       objectReference: {fileID: 0}
     - target: {fileID: 9113506596928607221, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
