@@ -85,4 +85,8 @@ public class SaveManager : MonoBehaviour
 			temp.DeleteSave(numToSave); //Adds blank/defualt save to file
 		}
 	}
+	
+	public void exitToMenu(){
+		Application.Quit();
+	}
 }
