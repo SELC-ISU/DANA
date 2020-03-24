@@ -20,11 +20,14 @@ public class IngameMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) && gameObject.tag == "Player"){ //Check if player has pressed escape
 			if(menuOpen){
-				Destroy(ingameMenuInstance);
+				Destroy(ingameMenuInstance); //Closes ingame menu
 			}else{
-				ingameMenuInstance = Instantiate(ingameMenuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+				ingameMenuInstance = Instantiate(ingameMenuPrefab, new Vector3(0, 0, 0), Quaternion.identity); //Opens ingame menu
 			}
 			menuOpen = !menuOpen;
+		}
+		if(Input.GetKeyDown(KeyCode.R) && gameObject.tag == "Player"){ //Check if player has press r key
+			restartLevel();
 		}
     }
 	
