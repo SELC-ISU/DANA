@@ -1120,7 +1120,7 @@ PrefabInstance:
     - target: {fileID: 9113506596928607217, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
       propertyPath: jumpPower
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9113506596928607218, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
@@ -2707,6 +2707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113506596928607217, guid: 83965d896cec72d44b26bff2e13b7f06,
+        type: 3}
+      propertyPath: jumpPower
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9113506596928607221, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
