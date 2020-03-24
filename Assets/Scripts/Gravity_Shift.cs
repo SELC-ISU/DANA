@@ -32,7 +32,7 @@ public class Gravity_Shift : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D entity) {
-		if(entity.gameObject.tag == "Player"){
+		if(entity.gameObject.tag == "Player" || entity.gameObject.tag == "ActivatorBox"){
 			// Debug.Log(rot + "=" + rotX + "," + rotY);
 			// Updates the current world gravity angle to this gravity shifter
 			angle = 180 - rotation.z;
