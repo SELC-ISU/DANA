@@ -43,7 +43,7 @@ public class Shoot : MonoBehaviour
             projectile = (GameObject) Instantiate(projectilePrefab, pos, Quaternion.identity);
 
             // Access the script of the new projectile and set its velocity
-            ScriptProjectile script = (ScriptProjectile) projectile.GetComponent<ScriptProjectile>();
+            Grav_Projectile script = (Grav_Projectile) projectile.GetComponent<Grav_Projectile>();
             script.setVel(velX, velY);
         }
     }

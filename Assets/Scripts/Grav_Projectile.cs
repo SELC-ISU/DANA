@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptProjectile : MonoBehaviour
+public class Grav_Projectile : MonoBehaviour
 {
 
     public float lifeSpan = 10.0f;
