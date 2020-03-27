@@ -12,6 +12,7 @@ TagManager:
   - PowerUp1
   - Teleporter
   - ActivatorBox
+  - platform
   layers:
   - Default
   - TransparentFX

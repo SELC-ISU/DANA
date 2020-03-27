@@ -141,9 +141,21 @@ public class Movement : MonoBehaviour
     		if(col.gameObject.tag == "RedBox"){
     		    UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     		}
+
+        //transforms position equal to platform
+            if(col.gameObject.tag == "platform")
+          {
+            transform.parent = col.gameObject.transform;
+          }
     }
 
     private void OnCollisionExit2D(Collision2D col) {
         // inAir = true;
+
+        //remove parent that was platform transform
+        if (col.gameObject.tag == "platform")
+        {
+            transform.parent = null;
+        }
     }
 }
