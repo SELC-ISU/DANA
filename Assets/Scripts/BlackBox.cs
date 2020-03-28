@@ -28,7 +28,7 @@ public class BlackBox : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D entity) {
-        if (entity.transform.gameObject.tag == "Projectile") {
+        if (entity.transform.gameObject.tag == "GravProjectile") {
             // Updates the current world gravity angle to this gravity shifter
             Gravity_Shift.angle = 180 - rotation.z;
             // Updates the gravity to this gravity shifter

@@ -32,8 +32,9 @@ public class Grav_Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D entity) {
         if (entity.transform.gameObject.name != "Player" &&
-            entity.transform.gameObject.tag != "Projectile" &&
-            entity.transform.gameObject.tag != "BlackBox") {
+              entity.transform.gameObject.tag != "Projectile" &&
+              entity.transform.gameObject.tag != "GravProjectile" &&
+              entity.transform.gameObject.tag != "BlackBox") {
             Destroy(this.gameObject);
         }
     }
