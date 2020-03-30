@@ -15,12 +15,21 @@ public class Dmg_Projectile : MonoBehaviour
     private Vector2 currentPos;
     private Vector2 lastPos;
 
+    List<RaycastHit2D> colliders;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         initTime = Time.timeSinceLevelLoad;
+
+        colliders = new List<RaycastHit2D>();
+
+        lastPos = (Vector2) transform.position;
         currentPos = (Vector2) transform.position + rb.velocity * Time.fixedDeltaTime;
+        ContactFilter2D filter = new ContactFilter2D();
+        Physics2D.Linecast(lastPos, currentPos, filter, colliders);
+        checkCollision();
     }
 
     // Update is called once per frame
@@ -33,39 +42,25 @@ public class Dmg_Projectile : MonoBehaviour
     }
 
     void FixedUpdate() {
-        List<RaycastHit2D> colliders = new List<RaycastHit2D>();
-        ContactFilter2D filter = new ContactFilter2D();
-        /* linecasting */
         lastPos = currentPos;
         currentPos = (Vector2) transform.position + rb.velocity * Time.fixedDeltaTime;
+        ContactFilter2D filter = new ContactFilter2D();
         Physics2D.Linecast(lastPos, currentPos, filter, colliders);
 
+        checkCollision();
+    }
+
+    private void checkCollision() {
         if (colliders.Count > 0) {
-            // Transform col = getClosestObject(colliders);
             Transform col = colliders[0].transform;
-            if (col.gameObject.name != "Bot_Turret" &&
+            if (col.gameObject.tag != "Bot_Turret" &&
                   col.gameObject.tag != "Projectile") {
                 Destroy(this.gameObject);
                 if (col.gameObject.name == "Player") {
-                    // playerDist = Vector2.Distance(col.position, initPos);
-                    // wallDist
                     UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
         }
-    }
-
-    private Transform getClosestObject(List<RaycastHit2D> list) {
-        float shortestDist = float.MaxValue;
-        Transform closestObject = list[0].transform;
-        foreach (RaycastHit2D hit in list) {
-              float dist = Vector2.Distance(lastPos, hit.transform.position);
-              if (dist < shortestDist) {
-                  shortestDist = dist;
-                  closestObject = hit.transform;
-              }
-        }
-        return closestObject;
     }
 
     public void setVel(float x, float y) {

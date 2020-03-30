@@ -36,7 +36,8 @@ public class Bot_Shoot : MonoBehaviour
         // Update pos to equal current position
         // Update target to equal mouse position
         Vector2 pos = rb.position;
-        Vector2 target = targetObject.GetComponent<Rigidbody2D>().position;
+        Rigidbody2D targetRB = targetObject.GetComponent<Rigidbody2D>();
+        Vector2 target = targetRB.position + targetRB.velocity * Time.fixedDeltaTime * 10;
 
         // Calculate the distances
         float distX = target.x - pos.x;
