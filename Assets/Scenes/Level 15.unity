@@ -1928,6 +1928,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7405233558671715390, guid: 2af8fa576bd36c947aa26cc06be8b4cc,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 740526246}
+    - target: {fileID: 7405233558671715390, guid: 2af8fa576bd36c947aa26cc06be8b4cc,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1511023716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2af8fa576bd36c947aa26cc06be8b4cc, type: 3}
 --- !u!1001 &1469708140
@@ -2156,6 +2166,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7405233558671715390, guid: 2af8fa576bd36c947aa26cc06be8b4cc,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 740526246}
+    - target: {fileID: 7405233558671715390, guid: 2af8fa576bd36c947aa26cc06be8b4cc,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1511023716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2af8fa576bd36c947aa26cc06be8b4cc, type: 3}
 --- !u!1001 &1643075834
@@ -3069,6 +3089,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7405233558671715390, guid: 2af8fa576bd36c947aa26cc06be8b4cc,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 740526246}
+    - target: {fileID: 7405233558671715390, guid: 2af8fa576bd36c947aa26cc06be8b4cc,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1511023716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2af8fa576bd36c947aa26cc06be8b4cc, type: 3}
 --- !u!1001 &2137910092
