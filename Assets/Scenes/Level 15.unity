@@ -751,7 +751,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: button
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6811376649737600296, guid: fedfbd0733b697a458febe93edf97d43, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fedfbd0733b697a458febe93edf97d43, type: 3}
 --- !u!1001 &612051118
 PrefabInstance:
@@ -1369,7 +1370,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: button (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6811376649737600296, guid: fedfbd0733b697a458febe93edf97d43, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fedfbd0733b697a458febe93edf97d43, type: 3}
 --- !u!1 &982561423 stripped
 GameObject:

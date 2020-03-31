@@ -14,6 +14,7 @@ public class nonplayer_movement : MonoBehaviour
     }
     void Update()
     {
+        //how far to move towards target
         float step = speed * Time.deltaTime;
         //if the block has reached its target
         if (transform.position == target.position)
