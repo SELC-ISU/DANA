@@ -22,10 +22,10 @@ public class Daniel_Powerup1 : MonoBehaviour
     void Update()
     {
     }
-    void OnTriggerEnter2D(Collider2D entity)
+    void OnTriggerEnter2D(Collider2D col)
     {
         //changes level if it player touches it
-        if (entity.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
                 if (Circle.active == true)
                 {
                     Box.transform.position = Circle.transform.position;

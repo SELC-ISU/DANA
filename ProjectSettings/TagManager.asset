@@ -15,6 +15,7 @@ TagManager:
   - platform
   - GravProjectile
   - Bot_Turret
+  - Coin
   layers:
   - Default
   - TransparentFX
