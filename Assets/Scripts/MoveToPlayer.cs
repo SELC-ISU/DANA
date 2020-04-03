@@ -42,12 +42,12 @@ public class MoveToPlayer : MonoBehaviour
         }
 
     }
-    void onTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject == player)
         {
             moveToPlayer = true;
-            player.transform.position = startPos;
+           
         }
     }
 }
