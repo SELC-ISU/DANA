@@ -24,7 +24,7 @@ public class SaveManager : MonoBehaviour
 
 		//Creates save folder in Application.persistentDataPath if it doesn't exist
 		saveFolder = Application.persistentDataPath + "/Saves/";
-		Debug.Log(saveFolder);
+		//Debug.Log(saveFolder);
 		if(!Directory.Exists(saveFolder)){
 			Directory.CreateDirectory(saveFolder);
 		}
