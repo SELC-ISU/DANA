@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class Coin : MonoBehaviour
             //if the player gets the coin, increase coin amount and make the coin disappear
             Destroy(this.gameObject);
             coinsCollected++;
+            CoinScore.instance.GainCoins(1);
         }
     }
 }
