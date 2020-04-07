@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
+
+    public AudioSource sound;
+
     private Rigidbody2D rb;
     private BoxCollider2D bc;
 
@@ -115,6 +118,7 @@ public class Movement : MonoBehaviour
         Vector2 grav = Physics2D.gravity;
         grav.Normalize();
         if(Math.Abs(rb.velocity.x * -grav.x) < 11 && Math.Abs(rb.velocity.y * -grav.y) < 11){
+                 sound.Play();
                  rb.velocity = new Vector2(
                     rb.mass * -grav.x * jumpPower * modifier,
                     rb.mass * -grav.y * jumpPower * modifier);

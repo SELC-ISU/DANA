@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bot_Shoot : MonoBehaviour
 {
 
+    public AudioSource sound;
+
     public float projectileSpeedMultiplier = 10.0f;
 
     public GameObject projectilePrefab;
@@ -33,6 +35,7 @@ public class Bot_Shoot : MonoBehaviour
     }
 
     private void shoot() {
+        sound.Play();
         // Update pos to equal current position
         // Update target to equal mouse position
         Vector2 pos = rb.position;
