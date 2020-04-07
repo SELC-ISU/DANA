@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BlackBox : MonoBehaviour
 {
+    public AudioSource sound;
+
     // The angle of this shifter that the gravity will shift to
     public Vector3 rotation = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -30,9 +32,17 @@ public class BlackBox : MonoBehaviour
     void OnTriggerEnter2D(Collider2D entity) {
         if (entity.transform.gameObject.tag == "GravProjectile") {
             // Updates the current world gravity angle to this gravity shifter
-            Gravity_Shift.angle = 180 - rotation.z;
+            float newAngle = 180 - rotation.z;
+            ChangeAngle(newAngle);
             // Updates the gravity to this gravity shifter
             Physics2D.gravity = new Vector2(rotX * 9.81f, rotY * 9.81f);
+        }
+    }
+
+    private void ChangeAngle(float newAngle) {
+        if (Gravity_Shift.angle != newAngle) {
+            sound.Play();
+            Gravity_Shift.angle = newAngle;
         }
     }
 }

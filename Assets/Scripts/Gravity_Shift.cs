@@ -5,6 +5,9 @@ using System;
 
 public class Gravity_Shift : MonoBehaviour
 {
+
+    public AudioSource sound;
+
     // The current angle that gravity in the world is shifted towards
     public static float angle = 0.0f;
 
@@ -32,12 +35,21 @@ public class Gravity_Shift : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D entity) {
-		if(entity.gameObject.tag == "Player" || entity.gameObject.tag == "ActivatorBox"){
-			// Debug.Log(rot + "=" + rotX + "," + rotY);
-			// Updates the current world gravity angle to this gravity shifter
-			angle = 180 - rotation.z;
-			// Updates the gravity to this gravity shifter
-			Physics2D.gravity = new Vector2(rotX * 9.81f, rotY * 9.81f);
-		}
+    		if(entity.gameObject.tag == "Player" || entity.gameObject.tag == "ActivatorBox") {
+    			// Debug.Log(rot + "=" + rotX + "," + rotY);
+    			// Updates the current world gravity angle to this gravity shifter
+          float newAngle = 180 - rotation.z;
+          ChangeAngle(newAngle);
+
+    			// Updates the gravity to this gravity shifter
+    			Physics2D.gravity = new Vector2(rotX * 9.81f, rotY * 9.81f);
+    		}
+    }
+
+    private void ChangeAngle(float newAngle) {
+        if (angle != newAngle) {
+            sound.Play();
+            angle = newAngle;
+        }
     }
 }
