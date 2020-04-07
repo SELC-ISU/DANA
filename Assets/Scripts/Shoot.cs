@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
 
+    public AudioSource sound;
+
     public float projectileSpeedMultiplier = 10.0f;
 
     public GameObject projectilePrefab;
@@ -22,6 +24,7 @@ public class Shoot : MonoBehaviour
 
         // Detect mouse input
         if (Input.GetMouseButtonDown(0)) {
+            sound.Play();
             // Update pos to equal current position
             // Update target to equal mouse position
             Vector2 pos = rb.position;
