@@ -24,10 +24,15 @@ public class CoinScore : MonoBehaviour
     {
         
     }
-
+    
     public void GainCoins(int coinsGained)
     {
         coins += coinsGained;
         coinText.text = "Coins: " + coins + "/" + totalCoins; 
+    }
+
+    public int getCoins()
+    {
+        return coins;
     }
 }
