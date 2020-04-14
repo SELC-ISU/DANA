@@ -8,6 +8,8 @@ public class Bot_Shoot : MonoBehaviour
     public AudioSource sound;
 
     public float projectileSpeedMultiplier = 10.0f;
+	public float projectileShootTimer = 0.1f; //Controls how often the projectile shoots
+	public float projectileLifeTime = 10.0f; //Controls how long the projectiles persist for
 
     public GameObject projectilePrefab;
     public GameObject targetObject;
@@ -27,7 +29,7 @@ public class Bot_Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentTime - lastTime > 0.1f) {
+        if (currentTime - lastTime > projectileShootTimer) {
             lastTime = currentTime;
             shoot();
         }
@@ -62,6 +64,7 @@ public class Bot_Shoot : MonoBehaviour
 
         // Access the script of the new projectile and set its velocity
         Dmg_Projectile script = (Dmg_Projectile) projectile.GetComponent<Dmg_Projectile>();
+		script.lifeSpan = projectileLifeTime;
         script.setVel(velX, velY);
     }
 }

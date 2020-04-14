@@ -6,7 +6,7 @@ using System;
 
 public class GreenBoxBehaviour : MonoBehaviour
 {
-	public string[] levelNames = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7", "Level 8", "Level 9", "Level 10", "Level 11", "Level 12", "Level 13", "Level 14", "Level 15", "Level 16", "Level 17", "Level 18", "Level 19"};
+	public string[] levelNames = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7", "Level 8", "Level 9", "Level 10", "Level 11", "Level 12", "Level 13", "Level 14", "Level 15", "Level 16", "Level 17", "Level 18", "Level 19", "Level 20", "Level 21"};
     public int coinsToWin;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class GreenBoxBehaviour : MonoBehaviour
 			int index = Array.IndexOf(levelNames, SceneManager.GetActiveScene().name);
 			if(index > -1 && index != levelNames.Length - 1){
 				SaveManager.currentSave.currentLevel = levelNames[++index];
+				SaveManager.currentSave.coinsGathered += CoinScore.instance.getCoins();
 				SaveManager.WriteSave(SaveManager.saveNum, SaveManager.currentSave);
 				UnityEngine.SceneManagement.SceneManager.LoadScene(levelNames[index]);
 			}else{

@@ -20,7 +20,7 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
 		saveNum = 1; //Sets default save folder
-		JsonUtility.FromJsonOverwrite("{\"currentLevel\":\"Level 1\"}", template); //Blank/Template Save Information
+		JsonUtility.FromJsonOverwrite("{\"currentLevel\":\"Level 1\", \"coinsGathered\":0}", template); //Blank/Template Save Information
 
 		//Creates save folder in Application.persistentDataPath if it doesn't exist
 		saveFolder = Application.persistentDataPath + "/Saves/";
@@ -52,6 +52,7 @@ public class SaveManager : MonoBehaviour
 	//Used to hold save information for reading/writing to save file
 	public class SaveInstance{
 		public string currentLevel;
+		public int coinsGathered;
 	}
 	
 	//Reads save numToSave from file to SaveInstance toSave
