@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 228438941102063679, guid: 9ac2b8aef24edfb4b865aa29dab7fc06,
         type: 3}
       propertyPath: totalCoins
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac2b8aef24edfb4b865aa29dab7fc06, type: 3}

@@ -487,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 228438941102063679, guid: 9ac2b8aef24edfb4b865aa29dab7fc06,
         type: 3}
       propertyPath: totalCoins
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac2b8aef24edfb4b865aa29dab7fc06, type: 3}
@@ -1350,7 +1350,7 @@ PrefabInstance:
     - target: {fileID: 6894062797584713665, guid: 2ad282bea2ae06b49a706406958c9f1c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6894062797584713665, guid: 2ad282bea2ae06b49a706406958c9f1c,
         type: 3}
