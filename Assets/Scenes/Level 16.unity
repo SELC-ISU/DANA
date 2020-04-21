@@ -1134,12 +1134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899b16901c72a7e4d99f7ce3f1c9b33b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1100433004}
-  door: {fileID: 1438733140}
-  width: 0
-  height: 0
-  posx: 0
-  posy: 0
+  doors:
+  - {fileID: 1838825859}
 --- !u!1001 &914413451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2133,6 +2129,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98aa24207468fd94791271846cfc126e, type: 3}
+--- !u!1 &1838825859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5262167241665330482, guid: 98aa24207468fd94791271846cfc126e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1838825858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2100329268
 PrefabInstance:
   m_ObjectHideFlags: 0

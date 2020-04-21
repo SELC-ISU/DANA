@@ -1055,24 +1055,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 680586400}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1300681627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300681623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899b16901c72a7e4d99f7ce3f1c9b33b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 468955339}
-  door: {fileID: 901023634}
-  width: 0
-  height: 0
-  posx: 0
-  posy: 0
 --- !u!1001 &1514951772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1393,12 +1375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899b16901c72a7e4d99f7ce3f1c9b33b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 468955339}
-  door: {fileID: 901023634}
-  width: 0
-  height: 0
-  posx: 0
-  posy: 0
+  doors:
+  - {fileID: 1300681623}
 --- !u!1001 &1760702929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1647,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 9113506596928607221, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9113506596928607221, guid: 83965d896cec72d44b26bff2e13b7f06,
         type: 3}

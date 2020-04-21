@@ -792,6 +792,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5262167241665330480, guid: 98aa24207468fd94791271846cfc126e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5262167241665330481, guid: 98aa24207468fd94791271846cfc126e,
         type: 3}
       propertyPath: m_SortingOrder
@@ -804,6 +809,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98aa24207468fd94791271846cfc126e, type: 3}
+--- !u!1 &397323160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5262167241665330482, guid: 98aa24207468fd94791271846cfc126e,
+    type: 3}
+  m_PrefabInstance: {fileID: 397323159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &428622787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1380,6 +1391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6811376649737600296, guid: fedfbd0733b697a458febe93edf97d43,
         type: 3}
+      propertyPath: doors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811376649737600296, guid: fedfbd0733b697a458febe93edf97d43,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 87829434}
@@ -1388,6 +1404,11 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 370037276}
+    - target: {fileID: 6811376649737600296, guid: fedfbd0733b697a458febe93edf97d43,
+        type: 3}
+      propertyPath: doors.Array.data[0]
+      value: 
+      objectReference: {fileID: 397323160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedfbd0733b697a458febe93edf97d43, type: 3}
 --- !u!1001 &849440344
