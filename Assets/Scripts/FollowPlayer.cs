@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
 
-    public GameObject player;
+    private GameObject player;
     public Vector2 offset = new Vector2(0, 0);
 
     private Vector3 relativePosition;
@@ -36,7 +36,7 @@ public class FollowPlayer : MonoBehaviour
     }
 
     void FixedUpdate() {
-      // Rotates the camera until it lines up with the gravity
+        // Rotates the camera until it lines up with the gravity
         if (transform.eulerAngles.z + rotationSpeed < goalOrientation.z) {
             transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), rotationSpeed, Space.Self);
         } else if (transform.eulerAngles.z - rotationSpeed > goalOrientation.z) {

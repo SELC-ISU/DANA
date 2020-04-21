@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8429603843018621906}
   - component: {fileID: 1438581358962250503}
   - component: {fileID: -6363310569004779027}
+  - component: {fileID: 4785993990352918183}
   m_Layer: 0
   m_Name: RedBox
   m_TagString: RedBox
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4785993990352918183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982006638084811500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa83e3f8aa47c75439f3d5c39b45ecbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -21,13 +21,13 @@ public class Movement : MonoBehaviour
 
     public float speed = 0.0f;
     public float jumpPower = 0.0f;
-
-    private bool yellowBox = false;
-    private static float JUMP_BOOST = 2.0f;
+    private float currentJump;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.SetJumpNormal();
+
 		    rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
 
@@ -82,12 +82,7 @@ public class Movement : MonoBehaviour
 
         // Jump logic
         if (jumpPressed && !inAir) {
-      			if(yellowBox){
-      				Jump(JUMP_BOOST);
-      				yellowBox = false;
-      			}else{
-      				Jump(1.0f);
-      			}
+            Jump();
             inAir = true;
         }
 
@@ -114,15 +109,21 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector2(xSpeed, ySpeed);
     }
 
-	   private void Jump(float modifier) {
+	  private void Jump() {
         Vector2 grav = Physics2D.gravity;
         grav.Normalize();
         if(Math.Abs(rb.velocity.x * -grav.x) < 11 && Math.Abs(rb.velocity.y * -grav.y) < 11){
-                 sound.Play();
-                 rb.velocity = new Vector2(
-                    rb.mass * -grav.x * jumpPower * modifier,
-                    rb.mass * -grav.y * jumpPower * modifier);
+            sound.Play();
+            rb.velocity = new Vector2(rb.mass * -grav.x * currentJump, rb.mass * -grav.y * currentJump);
 		    }
+    }
+
+    private void SetJumpNormal() {
+        currentJump = jumpPower;
+    }
+
+    private void SetJumpBoost() {
+        currentJump = jumpPower * 2.0f;
     }
 
     // This method was gotten from help forum https://answers.unity.com/questions/196381/how-do-i-check-if-my-rigidbody-player-is-grounded.html
@@ -132,33 +133,29 @@ public class Movement : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        // inAir = false;
 
         //Notes if touching yellowBox
-    		if(col.gameObject.tag == "YellowBox"){
-    		    yellowBox = true;
-    		}else{
-    		    yellowBox = false;
-    		}
-
-        //Reloads level if it touches a RedBox
-    		if(col.gameObject.tag == "RedBox"){
-    		    UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    		}
+    		if (col.gameObject.tag == "YellowBox") {
+    		    SetJumpBoost();
+    		} else {
+            SetJumpNormal();
+        }
 
         //transforms position equal to platform
-            if(col.gameObject.tag == "platform")
-          {
+        if (col.gameObject.tag == "platform") {
             transform.parent = col.gameObject.transform;
-          }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D col) {
-        // inAir = true;
+
+        //Notes if moving away from touching yellowBox
+        if (!Input.GetButton("Jump") && col.gameObject.tag == "YellowBox") {
+            SetJumpNormal();
+        }
 
         //remove parent that was platform transform
-        if (col.gameObject.tag == "platform")
-        {
+        if (col.gameObject.tag == "platform") {
             transform.parent = null;
         }
     }
