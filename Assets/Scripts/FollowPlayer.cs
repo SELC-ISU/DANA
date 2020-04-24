@@ -27,8 +27,9 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //sets the player to current object with player tag
-        player = GameObject.FindWithTag("Player");
+        if (player == null) {
+            player = GameObject.FindWithTag("Player");
+        }
         // Updates the position to equal the player's position plus an offset
         transform.position = player.transform.position + relativePosition;
         // Updates the current goal orientation based on the gravity direction
@@ -44,5 +45,9 @@ public class FollowPlayer : MonoBehaviour
         } else {
             transform.eulerAngles = goalOrientation;
         }
+    }
+
+    public void SetTarget(GameObject target) {
+        player = target;
     }
 }
