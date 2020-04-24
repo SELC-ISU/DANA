@@ -32,6 +32,7 @@ public class Daniel_Powerup1 : MonoBehaviour
                     Circle.SetActive(false);
                     Box.SetActive(true);
                     Powerup.SetActive(false);
+                    GameObject.FindWithTag("MainCamera").GetComponent<FollowPlayer>().SetTarget(Box);
                 }
                 else if (Box.active == true)
                 {
@@ -39,6 +40,7 @@ public class Daniel_Powerup1 : MonoBehaviour
                     Box.SetActive(false);
                     Circle.SetActive(true);
                     Powerup.SetActive(false);
-            }   
+                    GameObject.FindWithTag("MainCamera").GetComponent<FollowPlayer>().SetTarget(Circle);
+            }
     }
 }

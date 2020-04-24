@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
 
-    private GameObject player;
+    public GameObject player;
     public Vector2 offset = new Vector2(0, 0);
 
     private Vector3 relativePosition;
@@ -20,7 +20,9 @@ public class FollowPlayer : MonoBehaviour
 		    Gravity_Shift.angle = 0.0f;
 
         //set player to an object with player tag
-        player = GameObject.FindWithTag("Player");
+        if (player == null) {
+            player = GameObject.FindWithTag("Player");
+        }
         relativePosition = new Vector3(offset.x, offset.y, -10);
     }
 
