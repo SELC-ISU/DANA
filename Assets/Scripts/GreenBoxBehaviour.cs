@@ -31,7 +31,7 @@ public class GreenBoxBehaviour : MonoBehaviour
 				SaveManager.WriteSave(SaveManager.saveNum, SaveManager.currentSave);
 				UnityEngine.SceneManagement.SceneManager.LoadScene(levelNames[index]);
 			}else{
-				UnityEngine.SceneManagement.SceneManager.LoadScene("GreenBox_Test2");
+				UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 			}
         }
     }
