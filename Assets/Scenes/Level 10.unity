@@ -412,6 +412,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6780204337961778059, guid: 8c9c989c220390046b95b2ad5d474c13,
+        type: 3}
+      propertyPath: coinsToWin
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3379649108660541488, guid: 8c9c989c220390046b95b2ad5d474c13,
         type: 3}
       propertyPath: m_Name
