@@ -115,6 +115,7 @@ public class Movement : MonoBehaviour
         if(Math.Abs(rb.velocity.x * -grav.x) < 11 && Math.Abs(rb.velocity.y * -grav.y) < 11){
             sound.Play();
             rb.velocity = new Vector2(rb.mass * -grav.x * currentJump, rb.mass * -grav.y * currentJump);
+            SetJumpNormal();
 		    }
     }
 
